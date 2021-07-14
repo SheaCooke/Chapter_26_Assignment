@@ -1,12 +1,70 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl"
->
-    <xsl:output method="xml" indent="yes"/>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CSS Exercises</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1>Rocket Simulation</h1>
+    <form id="frm" method="POST" action="https://handlers.education.launchcode.org/request-parrot">
 
-    <xsl:template match="@* | node()">
-        <xsl:copy>
-            <xsl:apply-templates select="@* | node()"/>
-        </xsl:copy>
-    </xsl:template>
-</xsl:stylesheet>
+
+        <label>
+            Test Name
+            <input type="text" name="testName" value=""/>
+        </label><br />
+
+
+        <label>
+            Test Date
+            <input type="date" name="testDate" />
+        </label><br />
+
+        <label>
+            Rocket Type
+            <select name="rocketType">
+                <option value="Brant">Brant</option>
+                <option value="Lynx">Lynx</option>
+                <option value="Orion">Orion</option>
+                <option value="Terrier">Terrier</option>
+            </select>
+        </label><br />
+
+
+        <label>
+            Number of Rocket Boosters
+            <input type="number" name="boosterCount"  min="0" max="9"/>
+        </label><br />
+
+        <label>Wind Rating:</label><br />
+        <input type="radio" id="noWind" name="WindRating" value="0" />
+        <label for="noWind">No Wind</label><br />
+
+        <input type="radio" id="mildWind" name="WindRating" value="10" />
+        <label for="mildWind">Mild Wind</label><br />
+
+        <input type="radio" id="strongWind" name="WindRating" value="20" />
+        <label for="strongWind">Strong Wind</label><br />
+
+
+
+        <label>
+            Use production grade servers
+            <input type="checkbox" name="productionServers" />
+        </label><br />
+
+        <button>Run Simulation</button>
+
+
+
+    </form>
+
+
+
+
+
+</body>
+
+</html>
